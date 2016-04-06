@@ -77,5 +77,4 @@ namespace ROG_6.Model
         }
 
     }
-
 }
