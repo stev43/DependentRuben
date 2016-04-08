@@ -1,10 +1,12 @@
 ﻿
 namespace ROG_6.Model.Instructies
 {
-    class Slaap : IInstructies
+    class Slaap : Instructie
     {
-        public int ExcecuteInstructie(Tamagotchi tamagotchi)
+        public override int ExcecuteInstructie(Tamagotchi tamagotchi)
         {
+            if (base.ExcecuteInstructie(tamagotchi) == 1)
+                return 0;
             tamagotchi.setSleep(0);
             return 7200;
         }

@@ -1,11 +1,13 @@
 ﻿
 namespace ROG_6.Model.Instructies
 {
-    class Oefen : IInstructies
+    class Oefen : Instructie
     {
 
-        public int ExcecuteInstructie(Tamagotchi tamagotchi)
+        public override int ExcecuteInstructie(Tamagotchi tamagotchi)
         {
+            if (base.ExcecuteInstructie(tamagotchi) == 1)
+                return 0;
             int health = tamagotchi.getHealth();
             if (health < 5)
             {

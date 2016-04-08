@@ -8,7 +8,14 @@ namespace ROG_6.Model.Spelregels
         {
             if (tamagotchi.getHealth() < 20)
             {
-
+                tamagotchi.getStatus().setTopvorm(true);
+            }
+            else
+            {
+                if (tamagotchi.getHealth() >= 20 && tamagotchi.getStatus().getTopvorm() == true)
+                {
+                    tamagotchi.getStatus().setTopvorm(false);
+                }
             }
         }
     }

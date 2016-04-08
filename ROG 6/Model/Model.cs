@@ -12,10 +12,11 @@ namespace ROG_6.Model
         private List<ISpelregels> spelregels;
         private List<IInstructies> acties;
 
-        public Model()
+        public Model(List<IInstructies> acties, List<Tamagotchi> tamagotchis, List<ISpelregels> spelregels)
         {
-            tamagotchis = new List<Tamagotchi>();
-            spelregels = new List<ISpelregels>();
+            this.acties = acties;
+            this.tamagotchis = tamagotchis;
+            this.spelregels = spelregels;
         }
 
         public void run()
@@ -40,7 +41,7 @@ namespace ROG_6.Model
             spelregels.Add(regel);
         }
 
-        public void addInteractie(IInstructies actie)
+        public void addInstructie(IInstructies actie)
         {
             acties.Add(actie);
         }

@@ -1,11 +1,13 @@
 ﻿
 namespace ROG_6.Model.Instructies
 {
-    class Eet : IInstructies
+    class Eet : Instructie
     {
 
-        public int ExcecuteInstructie(Tamagotchi tamagotchi)
+        public override int ExcecuteInstructie(Tamagotchi tamagotchi)
         {
+            if (base.ExcecuteInstructie(tamagotchi) == 1)
+                return 0;
             tamagotchi.setHealth(0);
             return 30;
         }

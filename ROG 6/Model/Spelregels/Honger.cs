@@ -7,13 +7,27 @@ namespace ROG_6.Model.Spelregels
         public void ExcecuteSpelregel(Tamagotchi tamagotchi)
         {
             int hunger = tamagotchi.getHunger();
-            if (hunger > 95)
+            if (tamagotchi.getStatus().getHongerig() == true)
             {
-                hunger = 100;
+                if (hunger > 90)
+                {
+                    hunger = 100;
+                }
+                else
+                {
+                    hunger += 10;
+                }
             }
             else
             {
-                hunger += 5;
+                if (hunger > 95)
+                {
+                    hunger = 100;
+                }
+                else
+                {
+                    hunger += 5;
+                }
             }
             tamagotchi.setHunger(hunger);
         }

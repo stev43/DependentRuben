@@ -1,11 +1,13 @@
 ﻿
 namespace ROG_6.Model.Instructies
 {
-    class Speel : IInstructies
+    class Speel : Instructie
     {
 
-        public int ExcecuteInstructie(Tamagotchi tamagotchi)
+        public override int ExcecuteInstructie(Tamagotchi tamagotchi)
         {
+            if (base.ExcecuteInstructie(tamagotchi) == 1)
+                return 0;
             int boredom = tamagotchi.getBoredom();
             if (boredom < 10)
             {
