@@ -94,7 +94,7 @@ namespace ROG_6.Model
             }
         }
 
-        public Tamagotchi createTamagotchi(string parameter)
+        public Tamagotchi createDeTamagotchi(string parameter)
         {
             Tamagotchi tamagotchi = new Tamagotchi(parameter);
             tamagotchis.Add(tamagotchi);
