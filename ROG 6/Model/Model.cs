@@ -58,7 +58,7 @@ namespace ROG_6.Model
         public void actie(Tamagotchi tamagotchi, IInstructies actie)
         {
             this.rules(tamagotchi);
-            if (tamagotchi.status.getOverleden() != null)
+            if (tamagotchi.status.getOverleden() != true)
             {
                 if (tamagotchi.status.getBezig() != true)
                 {

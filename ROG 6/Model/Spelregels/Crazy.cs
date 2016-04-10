@@ -5,13 +5,13 @@ namespace ROG_6.Model.Spelregels
     {
         public void ExcecuteSpelregel(Tamagotchi tamagotchi)
         {
-            if (tamagotchi.getStatus().getKrankzinnig() == true && tamagotchi.getHealth() == 100)
+            if (tamagotchi.status.getKrankzinnig() == true && tamagotchi.health == 100)
             {
-                tamagotchi.getStatus().setKrankzinnig(false);
+                tamagotchi.status.setKrankzinnig(false);
             }
-            if (tamagotchi.getHealth() == 100)
+            if (tamagotchi.health == 100)
             {
-                tamagotchi.getStatus().setKrankzinnig(true);
+                tamagotchi.status.setKrankzinnig(true);
             }
         }
     }

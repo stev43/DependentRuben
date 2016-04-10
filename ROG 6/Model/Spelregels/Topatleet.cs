@@ -6,15 +6,15 @@ namespace ROG_6.Model.Spelregels
 
         public void ExcecuteSpelregel(Tamagotchi tamagotchi)
         {
-            if (tamagotchi.getHealth() < 20)
+            if (tamagotchi.health < 20)
             {
-                tamagotchi.getStatus().setTopvorm(true);
+                tamagotchi.status.setTopvorm(true);
             }
             else
             {
-                if (tamagotchi.getHealth() >= 20 && tamagotchi.getStatus().getTopvorm() == true)
+                if (tamagotchi.health >= 20 && tamagotchi.status.getTopvorm() == true)
                 {
-                    tamagotchi.getStatus().setTopvorm(false);
+                    tamagotchi.status.setTopvorm(false);
                 }
             }
         }

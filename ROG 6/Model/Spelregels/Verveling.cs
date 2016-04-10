@@ -6,7 +6,7 @@ namespace ROG_6.Model.Spelregels
 
         public void ExcecuteSpelregel(Tamagotchi tamagotchi)
         {
-            int boredom = tamagotchi.getBoredom();
+            int boredom = tamagotchi.boredom;
             if (boredom > 85)
             {
                 boredom = 100;
@@ -15,7 +15,7 @@ namespace ROG_6.Model.Spelregels
             {
                 boredom += 15;
             }
-            tamagotchi.setBoredom(boredom);
+            tamagotchi.boredom = boredom;
         }
 
     }

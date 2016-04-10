@@ -6,16 +6,16 @@ namespace ROG_6.Model.Spelregels
 
         public void ExcecuteSpelregel(Tamagotchi tamagotchi)
         {
-            int boredom = tamagotchi.getBoredom();
+            int boredom = tamagotchi.boredom;
             if (boredom > 80)
             {
-                tamagotchi.getStatus().setHongerig(true);
+                tamagotchi.status.setHongerig(true);
             }
             else
             {
-                if (tamagotchi.getStatus().getHongerig() == true && boredom <= 80)
+                if (tamagotchi.status.getHongerig() == true && boredom <= 80)
                 {
-                    tamagotchi.getStatus().setHongerig(false);
+                    tamagotchi.status.setHongerig(false);
                 }
             }
 

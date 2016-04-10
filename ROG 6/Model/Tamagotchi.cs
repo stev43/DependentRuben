@@ -2,7 +2,7 @@
 
 namespace ROG_6.Model
 {
-    class Tamagotchi
+    public class Tamagotchi
     {
 
         public String name { get; set; }

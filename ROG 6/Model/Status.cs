@@ -2,7 +2,7 @@
 
 namespace ROG_6.Model
 {
-    class Status
+    public class Status
     {
         private Boolean overleden;
         private Boolean hongerig;
