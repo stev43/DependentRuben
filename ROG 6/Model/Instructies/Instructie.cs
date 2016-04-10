@@ -2,7 +2,7 @@
 
 namespace ROG_6.Model.Instructies
 {
-    protected class Instructie : IInstructies
+    class Instructie : IInstructies
     {
         public virtual int ExcecuteInstructie(Tamagotchi tamagotchi)
         {

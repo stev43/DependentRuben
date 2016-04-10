@@ -1,7 +1,7 @@
 ﻿
 namespace ROG_6.Model.Instructies
 {
-    protected interface IInstructies
+    interface IInstructies
     {
 
         int ExcecuteInstructie(Tamagotchi tamagotchi);
