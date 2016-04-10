@@ -1,4 +1,5 @@
 ﻿using ROG_6.Model.Instructies;
+using ROG_6.Model.Repo;
 using ROG_6.Model.Spelregels;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ namespace ROG_6.Model
 {
     class Model
     {
-
+        private UnitOfWork unitOfWork;
         public Tamagotchi selectedTamagotchi
         {
             get;
@@ -29,11 +30,12 @@ namespace ROG_6.Model
             private set;
         }
 
-        public Model(List<IInstructies> acties, List<Tamagotchi> tamagotchis, List<ISpelregels> spelregels)
+        public Model(List<IInstructies> acties, List<Tamagotchi> tamagotchis, List<ISpelregels> spelregels, UnitOfWork unitOfWork)
         {
             this.acties = acties;
             this.tamagotchis = tamagotchis;
             this.spelregels = spelregels;
+            this.unitOfWork = unitOfWork;
         }
 
         public void rules(Tamagotchi tamagotchi)
@@ -97,7 +99,8 @@ namespace ROG_6.Model
         public Tamagotchi createTamagotchi(string parameter)
         {
             Tamagotchi tamagotchi = new Tamagotchi(parameter);
-            tamagotchis.Add(tamagotchi);
+            unitOfWork.Tamagotchis.Add(tamagotchi);
+            tamagotchis = new List<Tamagotchi>(unitOfWork.Tamagotchis.GetAll());
             selectedTamagotchi = tamagotchi;
             return tamagotchi;
         }

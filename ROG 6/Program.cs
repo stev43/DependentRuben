@@ -22,7 +22,7 @@ namespace ROG_6
                 var spelregels = kernel.Get<List<ISpelregels>>();
                 List<Tamagotchi> tamagotchis = new List<Tamagotchi>(unitOfWork.Tamagotchis.GetAll());
 
-                Model.Model model = new Model.Model(acties, tamagotchis, spelregels);
+                Model.Model model = new Model.Model(acties, tamagotchis, spelregels, unitOfWork);
                 View.View view = new View.View();
                 Controller controller = new Controller(model, view);
 
