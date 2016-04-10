@@ -38,7 +38,7 @@ namespace ROG_6.Model
             this.unitOfWork = unitOfWork;
         }
 
-        public void rules(Tamagotchi tamagotchi)
+        public Boolean rules(Tamagotchi tamagotchi)
         {
             double span = (DateTime.Now - tamagotchi.lastAcces).TotalHours;
             int hours = (int)(span);
@@ -53,12 +53,16 @@ namespace ROG_6.Model
                 }
                 tamagotchi.lastAcces = (DateTime.Now);
             }
+            if (tamagotchi.status.getOverleden() == true)
+                return false;
+            return true;
         }
 
-        public void actie(Tamagotchi tamagotchi, IInstructies actie)
+        public Boolean actie(Tamagotchi tamagotchi, IInstructies actie)
         {
-            this.rules(tamagotchi);
-            if (tamagotchi.status.getOverleden() != true)
+            if (this.rules(tamagotchi) == false)
+                return false;
+            else
             {
                 if (tamagotchi.status.getBezig() != true)
                 {
@@ -67,6 +71,9 @@ namespace ROG_6.Model
                     tamagotchi.lastAcces = DateTime.Now;
                 }
             }
+            if (tamagotchi.status.getOverleden() == true)
+                return false;
+            return true;
         }
 
         public void addSpelregel(ISpelregels regel)
@@ -113,6 +120,17 @@ namespace ROG_6.Model
                     return true;
             }
             return false;
+        }
+
+        public void removeTamagotchi(Tamagotchi tamagotchi)
+        {
+            if (tamagotchi != null)
+            {
+                if (selectedTamagotchi == tamagotchi)
+                    selectedTamagotchi = null;
+                if (tamagotchis.Contains(tamagotchi))
+                    tamagotchis.Remove(tamagotchi);
+            }
         }
     }
 }

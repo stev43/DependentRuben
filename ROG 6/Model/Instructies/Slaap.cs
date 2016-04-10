@@ -1,7 +1,7 @@
 ﻿
 namespace ROG_6.Model.Instructies
 {
-    class Slaap : Instructie
+    protected class Slaap : Instructie
     {
         public override int ExcecuteInstructie(Tamagotchi tamagotchi)
         {
