@@ -21,5 +21,9 @@ namespace ROG_6.Model.Instructies
             return 30;
         }
 
+        public override string getName()
+        {
+            return "Speel";
+        }
     }
 }

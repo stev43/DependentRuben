@@ -21,5 +21,9 @@ namespace ROG_6.Model.Instructies
             return 60;
         }
 
+        public override string getName()
+        {
+            return "Oefen";
+        }
     }
 }

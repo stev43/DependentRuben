@@ -2,9 +2,9 @@
 
 namespace ROG_6.Model.Instructies
 {
-    protected class Instructie : IInstructies
+    class Instructie : IInstructies
     {
-        protected int ExcecuteInstructie(Tamagotchi tamagotchi)
+        public virtual int ExcecuteInstructie(Tamagotchi tamagotchi)
         {
             if (checkCrazy(tamagotchi))
                 return 1;
@@ -26,5 +26,9 @@ namespace ROG_6.Model.Instructies
             return false;
         }
 
+        public virtual string getName()
+        {
+            return "";
+        }
     }
 }

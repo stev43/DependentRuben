@@ -1,10 +1,12 @@
 ﻿
 namespace ROG_6.Model.Instructies
 {
-    protected interface IInstructies
+    interface IInstructies
     {
 
-        public int ExcecuteInstructie(Tamagotchi tamagotchi);
+        int ExcecuteInstructie(Tamagotchi tamagotchi);
+
+        string getName();
 
     }
 }

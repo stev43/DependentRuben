@@ -62,7 +62,7 @@ namespace ROG_6.Model
 
         public Boolean getBezig()
         {
-            if (bezig == true && startActie.AddSeconds(actieTijd) == DateTime.Now)
+            if (bezig == true && startActie.AddSeconds(actieTijd) <= DateTime.Now)
             {
                 bezig = false;
             }

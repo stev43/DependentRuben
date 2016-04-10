@@ -10,5 +10,10 @@ namespace ROG_6.Model.Instructies
             tamagotchi.setSleep(0);
             return 7200;
         }
+
+        public override string getName()
+        {
+            return "Slaap";
+        }
     }
 }

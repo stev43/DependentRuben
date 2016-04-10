@@ -71,6 +71,11 @@ namespace ROG_6.Model
             return status;
         }
 
+        public Boolean getBezig()
+        {
+            return this.status.getBezig();
+        }
+
         public void setHunger(int hunger)
         {
             this.hunger = hunger;
