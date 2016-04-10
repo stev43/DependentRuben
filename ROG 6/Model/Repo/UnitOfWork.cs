@@ -1,9 +1,4 @@
 ﻿using ROG_6.Model.Repo.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ROG_6.Model.Repo
 {
@@ -14,10 +9,10 @@ namespace ROG_6.Model.Repo
         public UnitOfWork(TamaContext context)
         {
             _context = context;
-            Courses = new TamagotchiRepository(_context);
+            Tamagotchis = new TamagotchiRepository(_context);
         }
 
-        public ITamagotchiRepository Courses { get; private set; }
+        public ITamagotchiRepository Tamagotchis { get; private set; }
 
         public int Complete()
         {
