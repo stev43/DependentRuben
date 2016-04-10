@@ -5,13 +5,13 @@ namespace ROG_6.Model
     class Tamagotchi
     {
 
-        private String name;
-        private int hunger;
-        private int sleep;
-        private int boredom;
-        private int health;
-        private DateTime lastAcces;
-        private Status status;
+        public String name { get; set; }
+        public int hunger { get; set; }
+        public int sleep { get; set; }
+        public int boredom { get; set; }
+        public int health { get; set; }
+        public DateTime lastAcces { get; set; }
+        public Status status { get; set; }
 
         public Tamagotchi(String name)
         {
@@ -36,79 +36,5 @@ namespace ROG_6.Model
             this.status = new Status();
         }
 
-        public String getName()
-        {
-            return name;
-        }
-
-        public int getHunger()
-        {
-            return hunger;
-        }
-
-        public int getSleep()
-        {
-            return sleep;
-        }
-
-        public int getBoredom()
-        {
-            return boredom;
-        }
-
-        public int getHealth()
-        {
-            return health;
-        }
-
-        public DateTime getLastAcces()
-        {
-            return lastAcces;
-        }
-
-        public Status getStatus()
-        {
-            return status;
-        }
-
-        public Boolean getBezig()
-        {
-            return this.status.getBezig();
-        }
-
-        public void setHunger(int hunger)
-        {
-            this.hunger = hunger;
-        }
-
-        public void setSleep(int sleep)
-        {
-            this.sleep = sleep;
-        }
-
-        public void setBoredom(int boredom)
-        {
-            this.boredom = boredom;
-        }
-
-        public void setHealth(int health)
-        {
-            this.health = health;
-        }
-
-        public void setLastAcces(DateTime lastAcces)
-        {
-            this.lastAcces = lastAcces;
-        }
-
-        public void setStatus(Status status)
-        {
-            this.status = status;
-        }
-
-        public void setBezig(int tijd)
-        {
-            this.status.setBezig(tijd);
-        }
     }
 }

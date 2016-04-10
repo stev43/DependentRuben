@@ -38,7 +38,7 @@ namespace ROG_6.Model
 
         public void rules(Tamagotchi tamagotchi)
         {
-            double span = (DateTime.Now - tamagotchi.getLastAcces()).TotalHours;
+            double span = (DateTime.Now - tamagotchi.lastAcces).TotalHours;
             int hours = (int)(span);
             if (hours >= 1)
             {
@@ -49,20 +49,20 @@ namespace ROG_6.Model
                         regel.ExcecuteSpelregel(tamagotchi);
                     }
                 }
-                tamagotchi.setLastAcces(DateTime.Now);
+                tamagotchi.lastAcces = (DateTime.Now);
             }
         }
 
         public void actie(Tamagotchi tamagotchi, IInstructies actie)
         {
             this.rules(tamagotchi);
-            if (tamagotchi.getStatus().getOverleden() != null)
+            if (tamagotchi.status.getOverleden() != null)
             {
-                if (tamagotchi.getBezig() != true)
+                if (tamagotchi.status.getBezig() != true)
                 {
                     int duur = actie.ExcecuteInstructie(tamagotchi);
-                    tamagotchi.setBezig(duur);
-                    tamagotchi.setLastAcces(DateTime.Now);
+                    tamagotchi.status.setBezig(duur);
+                    tamagotchi.lastAcces = DateTime.Now;
                 }
             }
         }
@@ -106,7 +106,7 @@ namespace ROG_6.Model
         {
             foreach (Tamagotchi t in tamagotchis)
             {
-                if (t.getName() == parameter)
+                if (t.name == parameter)
                     return true;
             }
             return false;

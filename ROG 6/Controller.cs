@@ -130,7 +130,7 @@ namespace ROG_6
                 view.printActies(StringConverter.getActies(model.acties));
             else
             {
-                if (model.selectedTamagotchi != null && model.selectedTamagotchi.getBezig() != true)
+                if (model.selectedTamagotchi != null && model.selectedTamagotchi.status.getBezig() != true)
                 {
                     parameter = parameter.Trim();
                     if (Regex.IsMatch(parameter, @"^\d+$"))
