@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{89624E9C-5AA2-4F63-ADE8-373082DF0E2C}</ProjectGuid>
+    <ProjectGuid>{AD56D3FC-4216-4119-B3FA-E9C11E583261}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WCF_Tamagotchi.service</RootNamespace>
-    <AssemblyName>WCF_Tama</AssemblyName>
+    <RootNamespace>WCFservice2</RootNamespace>
+    <AssemblyName>WCFservice2</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
     <UseIISExpress>true</UseIISExpress>
@@ -83,7 +83,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <None Include="Properties\PublishProfiles\Tamagotchiserviceje.pubxml" />
     <None Include="Properties\PublishProfiles\wcfTamagotchiService %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\wcfTamagotchiService.pubxml" />
     <None Include="Web.Debug.config">
@@ -106,9 +105,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>9133</DevelopmentServerPort>
+          <DevelopmentServerPort>17552</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:9133/</IISUrl>
+          <IISUrl>http://localhost:17552/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

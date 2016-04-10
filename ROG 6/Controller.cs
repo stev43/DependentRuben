@@ -49,7 +49,7 @@ namespace ROG_6
                 case "create":
                     if (input.Contains(" "))
                     {
-                        createCommandHandler(input.Substring(input.IndexOf(" "), input.Length - input.IndexOf(" ")));
+                        //createCommandHandler(input.Substring(input.IndexOf(" "), input.Length - input.IndexOf(" ")));
                     }
                     else
                         view.printParameterError();
@@ -80,7 +80,7 @@ namespace ROG_6
             return true;
         }
 
-        private void createCommandHandler(string parameter)
+        /*private void createCommandHandler(string parameter)
         {
             parameter = parameter.Trim();
             if (parameter != null && model.checkExsits(parameter) != true)
@@ -98,7 +98,7 @@ namespace ROG_6
             {
                 view.PrintInvallidParameter(parameter);
             }
-        }
+        */
 
         private void tamagotchiCommandHandler(string parameter)
         {

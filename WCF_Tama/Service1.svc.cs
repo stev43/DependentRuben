@@ -13,7 +13,7 @@ namespace WCF_Tamagotchi.service
     public class Service1 : IService1
     {
         
-        public Service1(){
+       /* public Service1(){
             string baseAddress = "http://tamagotchiserviceje.azurewebsites.net/";
              BasicHttpBinding binding1 = new BasicHttpBinding();
         
@@ -22,7 +22,7 @@ namespace WCF_Tamagotchi.service
                 host.AddServiceEndpoint(typeof(IService1), binding1, baseAddress);
 
             }
-        }
+        }*/
  
 
         public string GetData(int value) {
