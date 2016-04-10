@@ -84,6 +84,7 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Tamagotchiserviceje.pubxml" />
+    <None Include="Properties\PublishProfiles\wcfTamagotchiService.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

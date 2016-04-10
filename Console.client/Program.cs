@@ -11,6 +11,7 @@ namespace Console.client
         static void Main(string[] args)
         {
             
+         /*   
             ChatService.IChatService service = new ChatService.ChatServiceClient();
 
             Console.WriteLine("Loading messages...");
@@ -24,9 +25,9 @@ namespace Console.client
                 PrintMessages(messages);
                 line = Console.ReadLine();
                
-                    
+        */            
             }
         }
 
     }
-}
+
