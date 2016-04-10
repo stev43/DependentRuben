@@ -13,11 +13,24 @@ namespace WCF_Tamagotchi.service
     public class Service1 : IService1
     {
         
+        public Service1(){
+            string baseAddress = "http://tamagotchiserviceje.azurewebsites.net/";
+        // Create the binding to be used by the service.
+
+             BasicHttpBinding binding1 = new BasicHttpBinding();
+        
+            using (ServiceHost host = new ServiceHost(typeof(Service1)))
+            {
+                host.AddServiceEndpoint(typeof(IService1), binding1, baseAddress);
+
+            }
+        }
 
         public string GetData(int value) {
             return string.Format("You entered: {0}", value);
         }
-   
+        
+        
         //public Dummy[] GetDummies() {
         
 //        }

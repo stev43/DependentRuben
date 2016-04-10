@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prog6.Domain", "ROG 6\Prog6
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCF_Tamagotchi.service", "WCF_Tama\WCF_Tamagotchi.service.csproj", "{89624E9C-5AA2-4F63-ADE8-373082DF0E2C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console.client", "Console.client\Console.client.csproj", "{F5237EE2-CAEC-48FE-8820-39C18484AAB7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{89624E9C-5AA2-4F63-ADE8-373082DF0E2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89624E9C-5AA2-4F63-ADE8-373082DF0E2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89624E9C-5AA2-4F63-ADE8-373082DF0E2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5237EE2-CAEC-48FE-8820-39C18484AAB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5237EE2-CAEC-48FE-8820-39C18484AAB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5237EE2-CAEC-48FE-8820-39C18484AAB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5237EE2-CAEC-48FE-8820-39C18484AAB7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
