@@ -7,7 +7,7 @@ namespace ROG_6.Model.Instructies
         {
             if (base.ExcecuteInstructie(tamagotchi) == 1)
                 return 0;
-            tamagotchi.setSleep(0);
+            tamagotchi.sleep = 0;
             return 7200;
         }
 

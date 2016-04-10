@@ -64,11 +64,16 @@ namespace ROG_6.View
         {
             PrintSegmentStart();
             Console.WriteLine("to enter a command, type the command and press Enter.");
+            Console.WriteLine();
             Console.WriteLine("enter \"help\" for help.");
+            Console.WriteLine();
             Console.WriteLine("enter \"tamagotchi {number}\" to select the tamagotchi, with {number} being the tamagotchi's number");
             Console.WriteLine("enter \"tamagotchi show\" to get a list of all tamagotchis");
+            Console.WriteLine();
             Console.WriteLine("enter \"action {number}\" to interact with an tamagotchi, with {number} being the chosen action");
             Console.WriteLine("enter \"action show\" to get a list of all possible actions");
+            Console.WriteLine();
+            Console.WriteLine("enter \"create {name}\" to create a new tamagotchi with a name");
             printSegmentEnd();
         }
 

@@ -14,11 +14,11 @@ namespace ROG_6.Model.Instructies
         private Boolean checkCrazy(Tamagotchi tamagotchi)
         {
             Random random = new Random();
-            if (tamagotchi.getStatus().getKrankzinnig() == true && tamagotchi.getStatus().getTopvorm() == false)
+            if (tamagotchi.status.getKrankzinnig() == true && tamagotchi.status.getTopvorm() == false)
             {
                 if (random.Next(0, 1) == 1)
                 {
-                    tamagotchi.getStatus().setOverleden(true);
+                    tamagotchi.status.setOverleden(true);
                     return true;
                 }
                 return false;
