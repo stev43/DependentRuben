@@ -52,5 +52,27 @@ namespace ROG_6.View
                 return returnStrings;
             }
         }
+
+        internal static List<string> getTamagotchiDeseased(Tamagotchi tamagotchi)
+        {
+            if (tamagotchi == null)
+            {
+                return null;
+            }
+            else
+            {
+
+                List<string> returnStrings = new List<string>();
+                returnStrings.Add(tamagotchi.name + " is overleden.");
+                returnStrings.Add("");
+                returnStrings.Add("Name:    " + tamagotchi.name);
+                returnStrings.Add("Hunger:  " + tamagotchi.hunger);
+                returnStrings.Add("Sleep:   " + tamagotchi.sleep);
+                returnStrings.Add("Boredom: " + tamagotchi.boredom);
+                returnStrings.Add("Health:  " + (100 - tamagotchi.health) + "%");
+
+                return returnStrings;
+            }
+        }
     }
 }

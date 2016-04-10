@@ -139,7 +139,8 @@ namespace ROG_6
                         if (model.acties.Count >= nr && nr > 0)
                         {
                             nr -= 1;
-                            model.actie(model.selectedTamagotchi, model.acties[nr]);
+                            if (!model.actie(model.selectedTamagotchi, model.acties[nr]))
+                                this.overledenSituation();
                         }
                         else
                         {
@@ -157,6 +158,12 @@ namespace ROG_6
                 }
             }
 
+        }
+
+        private void overledenSituation()
+        {
+            view.PrintTamagotchiInformatie(StringConverter.getTamagotchiDeseased(model.selectedTamagotchi));
+            model.removeTamagotchi(model.selectedTamagotchi);
         }
 
     }
