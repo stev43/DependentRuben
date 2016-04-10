@@ -1,4 +1,5 @@
 ﻿using ROG_6.Model.Instructies;
+using ROG_6.Model.Repo;
 using ROG_6.Model.Spelregels;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ namespace ROG_6.Model
 {
     class Model
     {
-
+        private UnitOfWork unitOfWork;
         public Tamagotchi selectedTamagotchi
         {
             get;
@@ -29,16 +30,17 @@ namespace ROG_6.Model
             private set;
         }
 
-        public Model(List<IInstructies> acties, List<Tamagotchi> tamagotchis, List<ISpelregels> spelregels)
+        public Model(List<IInstructies> acties, List<Tamagotchi> tamagotchis, List<ISpelregels> spelregels, UnitOfWork unitOfWork)
         {
             this.acties = acties;
             this.tamagotchis = tamagotchis;
             this.spelregels = spelregels;
+            this.unitOfWork = unitOfWork;
         }
 
-        public void rules(Tamagotchi tamagotchi)
+        public Boolean rules(Tamagotchi tamagotchi)
         {
-            double span = (DateTime.Now - tamagotchi.getLastAcces()).TotalHours;
+            double span = (DateTime.Now - tamagotchi.lastAcces).TotalHours;
             int hours = (int)(span);
             if (hours >= 1)
             {
@@ -49,22 +51,29 @@ namespace ROG_6.Model
                         regel.ExcecuteSpelregel(tamagotchi);
                     }
                 }
-                tamagotchi.setLastAcces(DateTime.Now);
+                tamagotchi.lastAcces = (DateTime.Now);
             }
+            if (tamagotchi.status.getOverleden() == true)
+                return false;
+            return true;
         }
 
-        public void actie(Tamagotchi tamagotchi, IInstructies actie)
+        public Boolean actie(Tamagotchi tamagotchi, IInstructies actie)
         {
-            this.rules(tamagotchi);
-            if (tamagotchi.getStatus().getOverleden() != null)
+            if (this.rules(tamagotchi) == false)
+                return false;
+            else
             {
-                if (tamagotchi.getBezig() != true)
+                if (tamagotchi.status.getBezig() != true)
                 {
                     int duur = actie.ExcecuteInstructie(tamagotchi);
-                    tamagotchi.setBezig(duur);
-                    tamagotchi.setLastAcces(DateTime.Now);
+                    tamagotchi.status.setBezig(duur);
+                    tamagotchi.lastAcces = DateTime.Now;
                 }
             }
+            if (tamagotchi.status.getOverleden() == true)
+                return false;
+            return true;
         }
 
         public void addSpelregel(ISpelregels regel)
@@ -94,10 +103,11 @@ namespace ROG_6.Model
             }
         }
 
-        public Tamagotchi createDeTamagotchi(string parameter)
+        public Tamagotchi createTamagotchi(string parameter)
         {
             Tamagotchi tamagotchi = new Tamagotchi(parameter);
-            tamagotchis.Add(tamagotchi);
+            unitOfWork.Tamagotchis.Add(tamagotchi);
+            tamagotchis = new List<Tamagotchi>(unitOfWork.Tamagotchis.GetAll());
             selectedTamagotchi = tamagotchi;
             return tamagotchi;
         }
@@ -106,10 +116,21 @@ namespace ROG_6.Model
         {
             foreach (Tamagotchi t in tamagotchis)
             {
-                if (t.getName() == parameter)
+                if (t.name == parameter)
                     return true;
             }
             return false;
+        }
+
+        public void removeTamagotchi(Tamagotchi tamagotchi)
+        {
+            if (tamagotchi != null)
+            {
+                if (selectedTamagotchi == tamagotchi)
+                    selectedTamagotchi = null;
+                if (tamagotchis.Contains(tamagotchi))
+                    tamagotchis.Remove(tamagotchi);
+            }
         }
     }
 }

@@ -6,8 +6,8 @@ namespace ROG_6.Model.Spelregels
 
         public void ExcecuteSpelregel(Tamagotchi tamagotchi)
         {
-            int hunger = tamagotchi.getHunger();
-            if (tamagotchi.getStatus().getHongerig() == true)
+            int hunger = tamagotchi.hunger;
+            if (tamagotchi.status.getHongerig() == true)
             {
                 if (hunger > 90)
                 {
@@ -29,7 +29,7 @@ namespace ROG_6.Model.Spelregels
                     hunger += 5;
                 }
             }
-            tamagotchi.setHunger(hunger);
+            tamagotchi.hunger = hunger;
         }
     }
 }

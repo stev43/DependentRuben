@@ -7,7 +7,7 @@ namespace ROG_6.Model.Spelregels
         public void ExcecuteSpelregel(Tamagotchi tamagotchi)
         {
 
-            int sleep = tamagotchi.getSleep();
+            int sleep = tamagotchi.sleep;
             if (sleep > 95)
             {
                 sleep = 100;
@@ -16,7 +16,7 @@ namespace ROG_6.Model.Spelregels
             {
                 sleep += 5;
             }
-            tamagotchi.setSleep(sleep);
+            tamagotchi.sleep = sleep;
         }
     }
 }

@@ -8,7 +8,7 @@ namespace ROG_6.Model.Instructies
         {
             if (base.ExcecuteInstructie(tamagotchi) == 1)
                 return 0;
-            int boredom = tamagotchi.getBoredom();
+            int boredom = tamagotchi.boredom;
             if (boredom < 10)
             {
                 boredom = 0;
@@ -17,7 +17,7 @@ namespace ROG_6.Model.Instructies
             {
                 boredom -= 10;
             }
-            tamagotchi.setBoredom(boredom);
+            tamagotchi.boredom = boredom;
             return 30;
         }
 

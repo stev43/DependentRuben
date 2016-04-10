@@ -6,7 +6,7 @@ namespace ROG_6.Model.Spelregels
 
         public void ExcecuteSpelregel(Tamagotchi tamagotchi)
         {
-            int health = tamagotchi.getHealth();
+            int health = tamagotchi.health;
             if (health > 95)
             {
                 health = 100;
@@ -15,7 +15,7 @@ namespace ROG_6.Model.Spelregels
             {
                 health += 5;
             }
-            tamagotchi.setHealth(health);
+            tamagotchi.health = health;
         }
 
     }

@@ -11,7 +11,7 @@ namespace ROG_6.View
             List<string> result = new List<string>();
             foreach (Tamagotchi tamagotchi in tamagotchis)
             {
-                string record = tamagotchi.getName();
+                string record = tamagotchi.name;
                 result.Add(record);
             }
             return result;
@@ -39,15 +39,37 @@ namespace ROG_6.View
 
                 List<string> returnStrings = new List<string>();
 
-                returnStrings.Add("Name:    " + tamagotchi.getName());
-                returnStrings.Add("Hunger:  " + tamagotchi.getHunger());
-                returnStrings.Add("Sleep:   " + tamagotchi.getSleep());
-                returnStrings.Add("Boredom: " + tamagotchi.getBoredom());
-                returnStrings.Add("Health:  " + (100 - tamagotchi.getHealth()) + "%");
-                if (tamagotchi.getBezig() == true)
-                    returnStrings.Add(tamagotchi.getName() + " is momenteel zeer actief bezig.");
+                returnStrings.Add("Name:    " + tamagotchi.name);
+                returnStrings.Add("Hunger:  " + tamagotchi.hunger);
+                returnStrings.Add("Sleep:   " + tamagotchi.sleep);
+                returnStrings.Add("Boredom: " + tamagotchi.boredom);
+                returnStrings.Add("Health:  " + (100 - tamagotchi.health) + "%");
+                if (tamagotchi.status.getBezig() == true)
+                    returnStrings.Add(tamagotchi.name + " is momenteel zeer actief bezig.");
                 else
-                    returnStrings.Add(tamagotchi.getName() + " is momenteel aan het uitrusten.");
+                    returnStrings.Add(tamagotchi.name + " is momenteel aan het uitrusten.");
+
+                return returnStrings;
+            }
+        }
+
+        internal static List<string> getTamagotchiDeseased(Tamagotchi tamagotchi)
+        {
+            if (tamagotchi == null)
+            {
+                return null;
+            }
+            else
+            {
+
+                List<string> returnStrings = new List<string>();
+                returnStrings.Add(tamagotchi.name + " is overleden.");
+                returnStrings.Add("");
+                returnStrings.Add("Name:    " + tamagotchi.name);
+                returnStrings.Add("Hunger:  " + tamagotchi.hunger);
+                returnStrings.Add("Sleep:   " + tamagotchi.sleep);
+                returnStrings.Add("Boredom: " + tamagotchi.boredom);
+                returnStrings.Add("Health:  " + (100 - tamagotchi.health) + "%");
 
                 return returnStrings;
             }

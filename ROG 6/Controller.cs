@@ -130,7 +130,7 @@ namespace ROG_6
                 view.printActies(StringConverter.getActies(model.acties));
             else
             {
-                if (model.selectedTamagotchi != null && model.selectedTamagotchi.getBezig() != true)
+                if (model.selectedTamagotchi != null && model.selectedTamagotchi.status.getBezig() != true)
                 {
                     parameter = parameter.Trim();
                     if (Regex.IsMatch(parameter, @"^\d+$"))
@@ -139,7 +139,8 @@ namespace ROG_6
                         if (model.acties.Count >= nr && nr > 0)
                         {
                             nr -= 1;
-                            model.actie(model.selectedTamagotchi, model.acties[nr]);
+                            if (!model.actie(model.selectedTamagotchi, model.acties[nr]))
+                                this.overledenSituation();
                         }
                         else
                         {
@@ -157,6 +158,12 @@ namespace ROG_6
                 }
             }
 
+        }
+
+        private void overledenSituation()
+        {
+            view.PrintTamagotchiInformatie(StringConverter.getTamagotchiDeseased(model.selectedTamagotchi));
+            model.removeTamagotchi(model.selectedTamagotchi);
         }
 
     }

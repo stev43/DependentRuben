@@ -8,7 +8,7 @@ namespace ROG_6.Model.Instructies
         {
             if (base.ExcecuteInstructie(tamagotchi) == 1)
                 return 0;
-            int health = tamagotchi.getHealth();
+            int health = tamagotchi.health;
             if (health < 5)
             {
                 health = 0;
@@ -17,7 +17,7 @@ namespace ROG_6.Model.Instructies
             {
                 health -= 5;
             }
-            tamagotchi.setHealth(health);
+            tamagotchi.health = health;
             return 60;
         }
 
