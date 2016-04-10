@@ -5,7 +5,7 @@ namespace ROG_6.Model.Spelregels
     {
         public void ExcecuteSpelregel(Tamagotchi tamagotchi)
         {
-            if (tamagotchi.status.getKrankzinnig() == true && tamagotchi.health == 100)
+            if (tamagotchi.status.getKrankzinnig() == true && tamagotchi.health < 100)
             {
                 tamagotchi.status.setKrankzinnig(false);
             }

@@ -7,7 +7,7 @@ namespace ROG_6.Model.Spelregels
 
         public void ExcecuteSpelregel(Tamagotchi tamagotchi)
         {
-            if (tamagotchi.hunger == 100 && tamagotchi.status.getTopvorm() == false)
+            if (tamagotchi.sleep == 100 && tamagotchi.status.getTopvorm() == false)
             {
                 tamagotchi.status.setOverleden(true);
             }

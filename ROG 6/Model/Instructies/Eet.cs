@@ -8,7 +8,7 @@ namespace ROG_6.Model.Instructies
         {
             if (base.ExcecuteInstructie(tamagotchi) == 1)
                 return 0;
-            tamagotchi.health = 0;
+            tamagotchi.hunger = 0;
             return 30;
         }
 

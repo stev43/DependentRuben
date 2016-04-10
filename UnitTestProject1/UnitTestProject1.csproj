@@ -66,9 +66,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="MockBinding.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="InteractieTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpelregelTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
