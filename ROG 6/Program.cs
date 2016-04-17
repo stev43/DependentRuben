@@ -26,10 +26,11 @@ namespace ROG_6
                 View.View view = new View.View();
                 Controller controller = new Controller(model, view);
 
-                Tamagotchi tamagotchi = new Tamagotchi("steven", 0, 0, 0, 0, DateTime.Now);
-                model.addTamagotchi(tamagotchi);
+                //Tamagotchi tamagotchi = new Tamagotchi("steven", 0, 0, 0, 0, DateTime.Now);
+                //model.addTamagotchi(tamagotchi);
 
                 controller.Start();
+                unitOfWork.Complete();
             }
         }
     }

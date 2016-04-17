@@ -1,16 +1,31 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace ROG_6.Model
 {
     public class Status
     {
-        private Boolean overleden;
-        private Boolean hongerig;
-        private Boolean topvorm;
-        private Boolean krankzinnig;
-        private Boolean bezig;
-        private int actieTijd;
-        private DateTime startActie;
+        [Key]
+        public int id { get; set; }
+        public Boolean overleden { get; set; }
+        public Boolean hongerig { get; set; }
+        public Boolean topvorm { get; set; }
+        public Boolean krankzinnig { get; set; }
+        public Boolean bezig
+        {
+            get
+            {
+                return bezig;
+            }
+            set
+            {
+                if (value == false)
+                    actieTijd = 0;
+                bezig = value;
+            }
+        }
+        public int actieTijd { get; set; }
+        public DateTime startActie { get; set; }
 
         public Status()
         {

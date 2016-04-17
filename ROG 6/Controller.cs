@@ -67,8 +67,15 @@ namespace ROG_6
                         view.printParameterError();
                     break;
                 case "info":
-                    model.rules(model.selectedTamagotchi);
-                    view.PrintTamagotchiInformatie(StringConverter.getTamagotchiInformation(model.selectedTamagotchi));
+                    if (model.selectedTamagotchi != null)
+                    {
+                        model.rules(model.selectedTamagotchi);
+                        view.PrintTamagotchiInformatie(StringConverter.getTamagotchiInformation(model.selectedTamagotchi));
+                    }
+                    else
+                    {
+                        view.PrintNoTamagotchi();
+                    }
                     break;
                 case "exit":
                     Console.WriteLine("Ending!");
@@ -141,6 +148,8 @@ namespace ROG_6
                             nr -= 1;
                             if (!model.actie(model.selectedTamagotchi, model.acties[nr]))
                                 this.overledenSituation();
+                            else
+                                view.PrintTamagotchiInformatie(StringConverter.getTamagotchiInformation(model.selectedTamagotchi));
                         }
                         else
                         {

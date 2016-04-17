@@ -8,6 +8,8 @@ namespace ROG_6.Model.Repo
             : base("name=TamaContext")
         {
             this.Configuration.LazyLoadingEnabled = false;
+
+
         }
 
         public virtual DbSet<Tamagotchi> Tamagotchis { get; set; }

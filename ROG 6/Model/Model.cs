@@ -88,6 +88,8 @@ namespace ROG_6.Model
 
         public void addTamagotchi(Tamagotchi tamagotchi)
         {
+            unitOfWork.Tamagotchis.Add(tamagotchi);
+            tamagotchis = new List<Tamagotchi>(unitOfWork.Tamagotchis.GetAll());
             tamagotchis.Add(tamagotchi);
         }
 
@@ -106,8 +108,7 @@ namespace ROG_6.Model
         public Tamagotchi createTamagotchi(string parameter)
         {
             Tamagotchi tamagotchi = new Tamagotchi(parameter);
-            unitOfWork.Tamagotchis.Add(tamagotchi);
-            tamagotchis = new List<Tamagotchi>(unitOfWork.Tamagotchis.GetAll());
+            this.addTamagotchi(tamagotchi);
             selectedTamagotchi = tamagotchi;
             return tamagotchi;
         }
