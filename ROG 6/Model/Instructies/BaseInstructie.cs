@@ -2,7 +2,7 @@
 
 namespace ROG_6.Model.Instructies
 {
-    class Instructie : IInstructies
+    class BaseInstructie : IInstructies
     {
         public virtual int ExcecuteInstructie(Tamagotchi tamagotchi)
         {
@@ -16,7 +16,7 @@ namespace ROG_6.Model.Instructies
             Random random = new Random();
             if (tamagotchi.status.getKrankzinnig() == true && tamagotchi.status.getTopvorm() == false)
             {
-                if (random.Next(0, 1) == 1)
+                if (random.Next(0, 2) == 1)
                 {
                     tamagotchi.status.setOverleden(true);
                     return true;

@@ -14,5 +14,6 @@ namespace ROG_6.Model.Repo
         {
             get { return Context as TamaContext; }
         }
+
     }
 }

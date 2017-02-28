@@ -17,6 +17,7 @@ namespace ROG_6
             kernel.Load(Assembly.GetExecutingAssembly());
             acties = kernel.Get<List<IInstructies>>();
             spelregels = kernel.Get<List<ISpelregels>>();
+            acties.Add(new BaseInstructie());
         }
         public int doActie(Tamagotchi t, int i)
         {

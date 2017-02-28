@@ -11,19 +11,7 @@ namespace ROG_6.Model
         public Boolean hongerig { get; set; }
         public Boolean topvorm { get; set; }
         public Boolean krankzinnig { get; set; }
-        public Boolean bezig
-        {
-            get
-            {
-                return bezig;
-            }
-            set
-            {
-                if (value == false)
-                    actieTijd = 0;
-                bezig = value;
-            }
-        }
+        public Boolean bezig { get; set; }
         public int actieTijd { get; set; }
         public DateTime startActie { get; set; }
 
@@ -33,6 +21,21 @@ namespace ROG_6.Model
             hongerig = false;
             topvorm = false;
             krankzinnig = false;
+            bezig = false;
+            actieTijd = 0;
+            startActie = DateTime.Now;
+        }
+
+        public Status(int id, bool overleden, bool hongerig, bool topvorm, bool krankzinnig, bool bezig, int actieTijd, DateTime startTime)
+        {
+            this.id = id;
+            this.overleden = overleden;
+            this.hongerig = hongerig;
+            this.topvorm = topvorm;
+            this.krankzinnig = krankzinnig;
+            this.bezig = bezig;
+            this.actieTijd = actieTijd;
+            this.startActie = startActie;
         }
 
         public Boolean getOverleden()

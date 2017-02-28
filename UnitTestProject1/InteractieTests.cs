@@ -149,6 +149,42 @@ namespace UnitTestProject1
 
             Assert.AreEqual("Speel", result);
         }
+
+        [TestMethod]
+        public void TestBaseName()
+        {
+            string result = test.getName(5);
+
+            Assert.AreEqual("", result);
+        }
+
+        [TestMethod]
+        public void TestActionHealthy()
+        {
+            Mock<Tamagotchi> tamagotchi = new Mock<Tamagotchi>("test", 20, 20, 20, 20, DateTime.Now);
+
+            int result = test.doActie(tamagotchi.Object, 5);
+
+            Assert.AreEqual(0, result);
+        }
+
+        [TestMethod]
+        public void TestActionUnhealthy()
+        {
+            //Mock<Tamagotchi> tamagotchi = new Mock<Tamagotchi>("test", 90, 90, 90, 100, DateTime.Now);
+
+            int result = 0;
+
+            for (int i = 0; i < 1000; i++)
+            {
+                Mock<Tamagotchi> tamagotchi = new Mock<Tamagotchi>("test", 90, 90, 90, 100, DateTime.Now);
+                tamagotchi.Object.status.setKrankzinnig(true);
+                result += test.doActie(tamagotchi.Object, 5);
+            }
+
+            Assert.IsTrue((result > 0), "tamagotchi has not died at least once in a hunderd times. he died {0} times", result);
+            Assert.IsTrue((result < 1000), "tamagotchi has not lived at least once in a hunderd times. he died {0} times", result);
+        }
     }
 
 }

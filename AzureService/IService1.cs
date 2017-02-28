@@ -1,5 +1,4 @@
-﻿using System;
-using System.Runtime.Serialization;
+﻿using System.Runtime.Serialization;
 using System.ServiceModel;
 
 namespace AzureService
@@ -46,12 +45,7 @@ namespace AzureService
     {
 
         [DataMember]
-        public string Content { get; set; }
+        public string Tamagotchi { get; set; }
 
-        [DataMember]
-        public DateTime TimeStamp { get; set; }
-
-        [DataMember]
-        public string User { get; set; }
     }
 }

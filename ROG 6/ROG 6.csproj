@@ -58,7 +58,7 @@
     <Compile Include="Controller.cs" />
     <Compile Include="Model\Instructies\Eet.cs" />
     <Compile Include="Model\Instructies\IInstructies.cs" />
-    <Compile Include="Model\Instructies\Instructie.cs" />
+    <Compile Include="Model\Instructies\BaseInstructie.cs" />
     <Compile Include="Model\Instructies\Knuffel.cs" />
     <Compile Include="Model\Instructies\Oefen.cs" />
     <Compile Include="Model\Instructies\Slaap.cs" />
@@ -91,7 +91,9 @@
     <Compile Include="View\View.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
